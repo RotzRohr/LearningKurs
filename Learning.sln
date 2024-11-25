@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GemeinsammeTeiler", "Gemein
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormenBasic", "FormenBasic\FormenBasic.csproj", "{811E8A3D-8985-41F5-B471-00CDB61E89D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buchverwaltung", "Buchverwaltung\Buchverwaltung.csproj", "{EC4F59F2-699B-4C47-AD57-6300BC8462DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,5 +62,9 @@ Global
 		{811E8A3D-8985-41F5-B471-00CDB61E89D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{811E8A3D-8985-41F5-B471-00CDB61E89D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{811E8A3D-8985-41F5-B471-00CDB61E89D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC4F59F2-699B-4C47-AD57-6300BC8462DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC4F59F2-699B-4C47-AD57-6300BC8462DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC4F59F2-699B-4C47-AD57-6300BC8462DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC4F59F2-699B-4C47-AD57-6300BC8462DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
