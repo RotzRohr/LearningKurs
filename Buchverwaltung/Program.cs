@@ -2,11 +2,11 @@
 
 class Program
 {
-    static void Main2(string[] args)
+    static void Main(string[] args)
     {
-        Buch buch1 = new Buch("Harry Potter1", "J.K. Rowling", Guid.NewGuid().ToString());
-        Buch buch2 = new Buch("Harry Potter2", "J.K. Rowling", Guid.NewGuid().ToString());
-        Buch buch3 = new Buch("Harry Potter3", "J.K. Rowling", Guid.NewGuid().ToString());
+        Buch buch1 = new Buch("Harry Potter1", "J.K. Rowling", Guid.NewGuid().ToString()); //1
+        Buch buch2 = new Buch("Harry Potter2", "J.K. Rowling", Guid.NewGuid().ToString()); //2
+        Buch buch3 = new Buch("Harry Potter3", "J.K. Rowling", Guid.NewGuid().ToString()); //3
         List<Buch> buchListe = new List<Buch> { buch1, buch2, buch3 };
 
         Console.WriteLine("Hallo und willkommen zur Buchverwaltung!");
