@@ -64,7 +64,7 @@ public class Bauer : Figur
         List<Position> possibleSchlag = new();
         foreach (Position move in possibleSchlagTemp)
         {
-            if (spielFeld.StillInField(move) && spielFeld.GetFigur(move)!=null)
+            if (spielFeld.StillInField(move) && spielFeld.GetFigur(move)!=null && spielFeld.GetFigur(move).player != player)
             {
                 //check for balck or white
                 if (player == Player.WHITE)
