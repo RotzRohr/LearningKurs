@@ -23,7 +23,7 @@ public abstract class Figur
     }
 
 
-    protected void AddMovesInDirection(SpielFeld spielFeld, List<Position> possibleMoves, int xIncrement, int yIncrement) //1 0
+    protected void AddMovesInDirection(SpielFeld spielFeld, List<Position> possibleMoves, List<Position> possibleHits, int xIncrement, int yIncrement) //1 0
     {
         int x = currentPosition.X + xIncrement;
         int y = currentPosition.Y + yIncrement;
@@ -41,6 +41,10 @@ public abstract class Figur
             }
             else
             {
+                if (figurAtNewPos.player != player)
+                {
+                    possibleHits.Add(newPos);
+                }
                 break;
             }
         }

@@ -54,15 +54,15 @@ public class Bauer : Figur
             }
         }
 
-        List<Position> possibleSchlagTemp = new();
+        List<Position> possibleHitsTemp = new();
 
-        possibleSchlagTemp.Add(new Position(currentPosition.X + 1, currentPosition.Y + 1));
-        possibleSchlagTemp.Add(new Position(currentPosition.X - 1, currentPosition.Y + 1));
-        possibleSchlagTemp.Add(new Position(currentPosition.X + 1, currentPosition.Y - 1));
-        possibleSchlagTemp.Add(new Position(currentPosition.X - 1, currentPosition.Y - 1));
+        possibleHitsTemp.Add(new Position(currentPosition.X + 1, currentPosition.Y + 1));
+        possibleHitsTemp.Add(new Position(currentPosition.X - 1, currentPosition.Y + 1));
+        possibleHitsTemp.Add(new Position(currentPosition.X + 1, currentPosition.Y - 1));
+        possibleHitsTemp.Add(new Position(currentPosition.X - 1, currentPosition.Y - 1));
 
-        List<Position> possibleSchlag = new();
-        foreach (Position move in possibleSchlagTemp)
+        List<Position> possibleHits = new();
+        foreach (Position move in possibleHitsTemp)
         {
             if (spielFeld.StillInField(move) && spielFeld.GetFigur(move)!=null && spielFeld.GetFigur(move).player != player)
             {
@@ -71,14 +71,14 @@ public class Bauer : Figur
                 {
                     if(move.X < currentPosition.X)
                     {
-                        possibleSchlag.Add(move);
+                        possibleHits.Add(move);
                     }
                 }
                 else
                 {
                     if(move.X > currentPosition.X)
                     {
-                        possibleSchlag.Add(move);
+                        possibleHits.Add(move);
                     }
                 }
             }
@@ -86,6 +86,6 @@ public class Bauer : Figur
 
 
 
-        return new Pair<List<Position>, List<Position>, Int32>(possibleMoves, possibleSchlag, (possibleMoves.Count()+possibleSchlag.Count()));
+        return new Pair<List<Position>, List<Position>, Int32>(possibleMoves, possibleHits, (possibleMoves.Count()+possibleHits.Count()));
     }
 }

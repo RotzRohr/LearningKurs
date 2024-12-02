@@ -24,15 +24,24 @@ public class Koenig : Figur
 
 
         List<Position> possibleMoves = new();
+        List<Position> possibleHits = new();
 
         foreach (Position move in possibleMovesTemp)
         {
-            if (spielFeld.StillInField(move) && spielFeld.GetFigur(move) == null)
+            if (spielFeld.StillInField(move))
             {
-                possibleMoves.Add(move);
+                Figur? figur = spielFeld.GetFigur(move);
+                if(figur!=null && figur.player!=player)
+                {
+                    possibleHits.Add(move);
+                }
+                else if(figur==null)
+                {
+                    possibleMoves.Add(move);
+                }
             }
         }
 
-        return new Pair<List<Position>, List<Position>, Int32>(possibleMoves, new List<Position>(), possibleMoves.Count);
+        return new Pair<List<Position>, List<Position>, Int32>(possibleMoves, possibleHits, (possibleMoves.Count()+possibleHits.Count()));
     }
 }
