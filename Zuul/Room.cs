@@ -1,32 +1,38 @@
-﻿namespace Zuul;
+﻿using Zuul.items;
+
+namespace Zuul;
 
 public class Room
 {
-    public Dictionary<string,Room> exits;
-    private string name;
-    private string description;
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public Dictionary<string, Room> Exits { get; set; }
+    public List<Item> Items { get; set; }
 
-    public Room(string name, string description)
+    public Room()
     {
-        this.name = name;
-        this.description = description;
-        exits = new Dictionary<string, Room>();
+        Exits = new Dictionary<string, Room>();
+        Items = new List<Item>();
     }
 
-    public void addExit(string exit, Room room)
+    public void addItem(Item item)
     {
-        exits.Add(exit, room);
+        Items.Add(item);
     }
 
-    public void printInfos()
+    public void addExit(string direction, Room room)
     {
-        //name desc exits
-        Console.WriteLine("Name: " + name);
-        Console.WriteLine("Description: " + description);
-        Console.WriteLine("Exits:");
-        foreach (var exit in exits)
+        Exits.Add(direction, room);
+    }
+
+    public void printInfo()
+    {
+        Console.WriteLine($"Name: {Name}");
+        Console.WriteLine($"Description: {Description}");
+        Console.WriteLine("You have the following Options:");
+        foreach (KeyValuePair<string,Room> keyValuePair in Exits)
         {
-            Console.WriteLine(exit.Key);
+            Console.WriteLine(keyValuePair.Key);
         }
     }
 }
